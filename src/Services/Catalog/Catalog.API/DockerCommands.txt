@@ -1,0 +1,12 @@
+﻿docker ps -- to display containers
+
+docker exec -it <containerId> bash
+
+psql -U postgres --postgres cli
+
+\l -- list Db
+
+\c <DbName> --connect to db
+\c CatalogDb
+
+\d -- display tables
