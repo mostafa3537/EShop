@@ -1,6 +1,7 @@
 ﻿using BuildingBlocks.CQRS;
 using Catalog.API.Models;
 using FluentValidation;
+using Marten;
 
 namespace Catalog.API.Features.CreateProduct;
 
@@ -20,6 +21,7 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 }
 
 internal class CreateProductCommandHandler
+    (IDocumentSession session)
     : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
     public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
@@ -37,11 +39,11 @@ internal class CreateProductCommandHandler
             Price = command.Price
         };
 
-        ////save to database
-        //session.Store(product);
-        //await session.SaveChangesAsync(cancellationToken);
+        //save to database
+        session.Store(product);
+        await session.SaveChangesAsync(cancellationToken);
 
         //return result
-        return new CreateProductResult(Guid.NewGuid());
+        return new CreateProductResult(product.Id);
     }
 }
