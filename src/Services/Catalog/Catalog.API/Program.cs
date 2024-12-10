@@ -1,15 +1,27 @@
-namespace Catalog.API
+using Carter;
+using FluentValidation;
+
+namespace Catalog.API;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
+        var builder = WebApplication.CreateBuilder(args);
+
+        var assembly = typeof(Program).Assembly;
+        builder.Services.AddMediatR(config =>
         {
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
+            config.RegisterServicesFromAssembly(assembly);
+        });
+        builder.Services.AddValidatorsFromAssembly(assembly);
 
-            app.MapGet("/", () => "Hello World!");
+        builder.Services.AddCarter();
 
-            app.Run();
-        }
+        var app = builder.Build();
+
+        app.MapCarter();
+
+        app.Run();
     }
 }
