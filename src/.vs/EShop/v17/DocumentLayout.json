@@ -1,7 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "F:\\Mostafa PC\\Playground\\EShop\\EShop\\",
-  "Documents": [],
+  "WorkspaceRootPath": "F:\\Mostafa PC\\Playground\\EShop\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C341BB6F-56F6-4D4A-912D-3508B5BC4779}|BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj|f:\\mostafa pc\\playground\\eshop\\src\\buildingblocks\\buildingblocks\\buildingblocks.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C341BB6F-56F6-4D4A-912D-3508B5BC4779}|BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj|solutionrelative:buildingblocks\\buildingblocks\\buildingblocks.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BuildingBlocks",
+              "DocumentMoniker": "F:\\Mostafa PC\\Playground\\EShop\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+              "RelativeDocumentMoniker": "BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+              "ToolTip": "F:\\Mostafa PC\\Playground\\EShop\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+              "RelativeToolTip": "BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-10T17:50:55.509Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
