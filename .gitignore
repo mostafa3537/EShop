@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/src/.vs/EShop/v17/.suo
+/src/.vs/EShop/v17/DocumentLayout.json
