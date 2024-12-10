@@ -1,0 +1,12 @@
+version: '1.0'
+
+services:
+  catalogdb:
+    image: postgres:latest
+ 
+volumes:
+  postgres_catalog:
+
+    
+
+

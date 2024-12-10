@@ -1,0 +1,14 @@
+version: '1.0'
+
+services:
+  catalogdb:
+    container_name: catalogdb
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: CatalogDb
+    volumes:
+      - postgres_catalog:/var/lib/postgresql/data
+    ports:
+      - "5432:5432" # Expose PostgreSQL to the host on port 5432
