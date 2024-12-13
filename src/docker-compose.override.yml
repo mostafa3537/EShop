@@ -13,6 +13,18 @@ services:
     ports:
       - "5432:5432" # Expose PostgreSQL to the host on port 5432
 
+  basketdb:
+    container_name: basketdb
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: BasketDb
+    volumes:
+      - postgres_basket:/var/lib/postgresql/data
+    ports:
+      - "5433:5432" # Expose PostgreSQL to the host on port 5432
+
   catalog.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
@@ -22,4 +34,13 @@ services:
       - catalogdb
     ports:
       - "6000:8080"
+
+  basket.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ConnectionStrings__Database=Server=localhost;Port=5433;Database=BasketDb;User Id=postgres;Password=postgres;Include Error Detail=true
+    ports:
+      - "5000:8080"
 
