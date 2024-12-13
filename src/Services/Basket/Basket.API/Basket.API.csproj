@@ -5,7 +5,9 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-		<DockerfileContext>..\..\..\src</DockerfileContext>
+		<DockerfileContext>..\..\..</DockerfileContext>
+		<UserSecretsId>931a04e5-9867-4b0a-898c-e85c83d58c98</UserSecretsId>
+
 	</PropertyGroup>
 
 	<ItemGroup>
