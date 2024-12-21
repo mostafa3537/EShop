@@ -23,7 +23,13 @@ services:
     volumes:
       - postgres_basket:/var/lib/postgresql/data
     ports:
-      - "5433:5432" # Expose PostgreSQL to the host on port 5432
+      - "5433:5432" # Expose PostgreSQL to the host on port 5433
+
+  distributedcache:
+    container_name: distributedcache
+    restart: always
+    ports:
+      - "6379:6379"
 
   catalog.api:
     environment:
@@ -39,8 +45,11 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - ASPNETCORE_HTTPS_PORTS=8081
-      - ConnectionStrings__Database=Server=localhost;Port=5433;Database=BasketDb;User Id=postgres;Password=postgres;Include Error Detail=true
+      - ConnectionStrings__Database=Server=basketdb;Port=5432;Database=BasketDb;User Id=postgres;Password=postgres;Include Error Detail=true
+      - ConnectionStrings__Redis=distributedcache:6379
+    depends_on:
+      - basketdb
+      - distributedcache
     ports:
       - "5000:8080"
 

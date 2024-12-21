@@ -34,7 +34,20 @@ public class Program
         builder.Services.AddHealthChecks()
             .AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
 
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("AllowAllOrigins", policy =>
+            {
+                policy.AllowAnyOrigin() // Allow all origins
+                      .AllowAnyHeader() // Allow all headers
+                      .AllowAnyMethod(); // Allow all HTTP methods
+            });
+        });
+
         var app = builder.Build();
+
+        // Use CORS
+        app.UseCors("AllowAllOrigins");
 
         // pipeline
         app.MapCarter();

@@ -34,6 +34,11 @@ public class Program
         builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();
 
         //Async Communication Services
+        builder.Services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration = builder.Configuration.GetConnectionString("Redis");
+            //options.InstanceName = "Basket";
+        });
 
 
         //Cross-Cutting Services

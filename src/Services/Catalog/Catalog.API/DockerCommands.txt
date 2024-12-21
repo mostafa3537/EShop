@@ -10,3 +10,5 @@ psql -U postgres --postgres cli
 \c CatalogDb
 
 \d -- display tables
+
+docker run --name catalogdb -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=CatalogDb -v postgres_catalog:/var/lib/postgresql/data -p 5432:5432 --restart always -d postgres:latest
