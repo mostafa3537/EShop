@@ -1,6 +1,4 @@
-﻿using MediatR;
-
-namespace Basket.API.Basket.CheckoutBasket;
+﻿namespace Basket.API.Basket.CheckoutBasket;
 
 public record CheckoutBasketRequest(BasketCheckoutDto BasketCheckoutDto);
 public record CheckoutBasketResponse(bool IsSuccess);
